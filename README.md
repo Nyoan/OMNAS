@@ -1,29 +1,25 @@
-# OMNAS Smart Prep 3.0 — siap untuk GitHub Pages
+# OMNAS Smart Prep 4.3 - Soal Baru dan Solusi Jelas
 
-Aplikasi belajar berbasis browser dengan 102 latihan (54 soal dari PDF OMNAS 15 yang diberikan pengguna, 36 soal tambahan, dan 12 uraian), pembahasan teks, serta tiga papan tulis interaktif. **Tidak berafiliasi dengan penyelenggara OMNAS.**
+Pembaruan dari 4.2, dapat dipakai offline atau melalui GitHub Pages.
 
-**Mulai dari sini:** baca [DEPLOY_GITHUB.md](DEPLOY_GITHUB.md) untuk cara mengunggah dan menerbitkan.
+## Isi soal
 
-## Struktur folder
+| Bidang | OMNAS asli | Latihan orisinal | Uraian | Total |
+|---|---:|---:|---:|---:|
+| Matematika Kelas 4 (Level 2) | 16 | 22 | 4 | 42 |
+| Matematika Kelas 5 (Level 3) | 17 | 22 | 4 | 43 |
+| Bahasa Inggris Kelas 5 (Level 3) | 21 | 22 | 4 | 47 |
+| **Total** | **54** | **66** | **12** | **132** |
 
-```text
-index.html                  # Halaman utama; harus berada di root repository
-.nojekyll                   # Agar GitHub Pages menerbitkan situs apa adanya
-data/bank-soal.json         # Salinan data bank soal untuk pengembangan
-data/template-pembahasan-video.json           # Templat konten untuk pengembangan
-README.md
-DEPLOY_GITHUB.md
-FRAMEWORK.md
-```
+## Yang berubah
+- Penambahan **30 soal latihan orisinal** (10 per bidang) dengan kunci jawaban dan pembahasan spesifik. Bukan soal asli OMNAS.
+- **39 panduan pembahasan yang diperbarui** (30 soal baru + 9 soal lama), menyajikan alasan pemilihan metode, hitungan, cek ulang, kekeliruan umum, dan pertanyaan orang tua.
+- Mode campuran tetap **10 soal, 5 asli + 5 latihan orisinal**, dengan urutan acak; nomor pertama berotasi berdasarkan riwayat browser pada setiap bidang dan mode.
+- Mode soal asli / tambahan / uraian bisa diakses dari kartu masing-masing bidang.
+- Solusi untuk seluruh 132 soal tersedia. Untuk soal selain 39 pembaruan, panduan konsep mengacu pada sistem pembahasan dari versi 4.2.
 
-File `index.html` sudah memuat bank soal dan gambar sehingga aplikasi berjalan tanpa harus mengambil `data/bank-soal.json` melalui jaringan. Tidak ada backend atau build step. Bisa dihosting sebagai static site.
+**Sumber:** Soal berlabel OMNAS asli berasal dari PDF OMNAS 15 unggahan pengguna. Soal latihan orisinal ditulis terpisah dengan topik mengacu pada materi-materi OMNAS; **bukan** diambil verbatim dari UKMT, NRICH, atau sumber lain.
 
-## Batasan penting
+**Privasi:** Riwayat hasil hanya disimpan dalam browser (localStorage) dan tidak otomatis tersinkron antar-perangkat.
 
-- Hasil belajar dua anak disimpan di `localStorage` pada browser/perangkat masing-masing. Pindah HP atau hapus data browser dapat menyebabkan hilangnya riwayat. Gunakan ekspor CSV untuk menyimpan cadangan.
-- Tidak ada login, server database, ataupun sinkronisasi hasil antarperangkat.
-- Tidak ada video MP4 dengan narasi manusia yang terintegrasi dalam paket ini. Tiga pembahasan papan tulis tersedia; rekaman suara manusia hanya dapat dipilih sebagai berkas lokal pada antarmuka papan tulis (sinkronisasi langkah masih manual).
-- Situs di GitHub Pages dapat dilihat publik. Sebelum menerbitkan, **periksa izin publikasi ulang soal-soal OMNAS yang berasal dari PDF pihak ketiga**. Jangan memasukkan nama anak, alamat, laporan pribadi, maupun data sensitif dalam repository.
-- Jangan menganggap kata 'source' pada soal tambahan sebagai izin untuk menyalin konten milik pihak ketiga. Soal tambahan dibuat baru dan tidak resmi.
-
-Tidak ada lisensi redistribusi materi pihak ketiga yang diberikan oleh paket ini.
+**Hak cipta:** Jika mengunggah ke GitHub Pages secara publik, pastikan Anda punya izin untuk menerbitkan ulang soal OMNAS asli dalam repository publik.
